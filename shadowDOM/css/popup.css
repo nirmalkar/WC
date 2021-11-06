@@ -1,0 +1,131 @@
+.popup-button {
+    width: auto;
+    height: auto;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: rgb(221, 219, 223);
+    cursor: pointer;
+}
+.popup-container {
+    position: relative;
+    margin: 0.2rem;
+}
+.popup-button:hover {
+    transition: 300ms ease-in;
+    background-color: #c2c0c2;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name {
+    margin: 6px;
+    font-size: 14px;
+}
+
+.avatar {
+    background-color: red;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+}
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+.popup-content {
+    position: absolute;
+    cursor: default;
+    height: auto;
+    width: auto;
+    z-index: 4;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    left: -5rem;
+    top: -2rem;
+    display: none;
+    opacity: 1;
+    animation: fade 0.5s;
+}
+
+.popup-header {
+    background: #212121;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 70px;
+    border-radius: 8px 8px 0 0;
+}
+.header-img {
+    border-radius: 50%;
+    height: 3rem;
+    margin-left: 1rem;
+}
+
+.close {
+    background: #585858;
+    z-index: 3;
+    border-radius: 10px;
+    height: 20px;
+    position: absolute;
+    width: 20px;
+    right: 1rem;
+    top: 1.6rem;
+    cursor: pointer;
+}
+.line1 {
+    background: #f6f6f6;
+    height: 12px;
+    position: absolute;
+    transform: translateX(9px) translateY(4px) rotate(45deg);
+    width: 2px;
+}
+.line2 {
+    background: #f6f6f6;
+    top: 0;
+    height: 12px;
+    position: absolute;
+    transform: translateX(9px) translateY(4px) rotate(-45deg);
+    width: 2px;
+}
+.row {
+    padding: 0.5rem 0.8rem;
+    height: 60px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.twitter .row {
+    border-radius: 0 0 8px 8px;
+}
+.row:hover {
+    transition: 200ms ease-in;
+    background-color: #f7f7f7;
+}
+
+.instagram-img {
+    width: 2rem;
+}
+.twitter-img {
+    width: 2rem;
+}
+.social-link {
+    text-decoration: none;
+    font-size: 18px;
+    color: #555;
+}
+.social-id {
+    margin-left: 10px;
+}
+.social-id:hover {
+    color: #333;
+}
