@@ -6,27 +6,27 @@ template.innerHTML = `
     <div class="popup-button">
     <div class="avatar-container">
     <img class="avatar" alt="avatar"/>
-    <div class="name">Hemant Nirmalkar</div>
+    <div class="name"></div>
     </div>
     </div>
         <div class="popup-content">
         <div class="popup-header">
-        <img class="header-img" src="https://avatars.githubusercontent.com/u/50173564?v=4" alt="avatar"/>
+        <img class="header-img" alt="avatar"/>
         <div class="close">
         <div class="line1"></div>
         <div class="line2"></div>
         </div>
         </div>
-        <a class="social-link instagram" href="https://www.instagram.com/monty_davinci/" rel="noreferrer noopener" target="_blank">
+        <a class="social-link instagram"  rel="noreferrer noopener" target="_blank">
         <div class="row">
         <img class="instagram-img" src="./images/instagram.svg" alt="instagram"/>
-        <div class="social-id">@montydavinci</div>
+        <div class="social-id social-id-instagram"><slot name="instagram"/></div>
         </div>
         </a>
-        <a class="social-link twitter" href="https://twitter.com/nirmalkar_" rel="noreferrer" target="_blank">
+        <a class="social-link twitter"  rel="noreferrer" target="_blank">
         <div class="row">
         <img class="twitter-img" src="./images/twitter.svg" alt="twitter"/>
-        <div class="social-id">@nirmalkar_</div>
+        <div class="social-id social-id-twitter"><slot name="twitter"/></div>
         </div>
         </div>
         </a>
@@ -40,8 +40,39 @@ class PopUp extends HTMLElement {
         this.showModal = false
         this.attachShadow({ mode: 'open' })
         this.shadowRoot.appendChild(template.content.cloneNode(true))
+        const instagram = this.getAttribute('instagram')
+        const twitter = this.getAttribute('twitter')
         this.shadowRoot.querySelector('.avatar').src =
             this.getAttribute('avatar')
+        this.shadowRoot.querySelector('.header-img').src =
+            this.getAttribute('avatar')
+        if (instagram) {
+            this.shadowRoot.querySelector('.instagram').href =
+                this.getAttribute('instagram')
+        } else {
+            this.shadowRoot.querySelector('.instagram').onClick =
+                'return false;'
+            this.shadowRoot.querySelector(
+                '.social-id-instagram'
+            ).innerHTML = `No Instagram account found`
+        }
+        if (twitter) {
+            this.shadowRoot.querySelector('.twitter').href =
+                this.getAttribute('twitter')
+        } else {
+            this.shadowRoot.querySelector('.twitter').onClick = 'return false;'
+            this.shadowRoot.querySelector(
+                '.social-id-twitter'
+            ).innerHTML = `No Twitter account found`
+        }
+
+        this.shadowRoot.querySelector('.name').innerHTML =
+            this.getAttribute('name')
+        this.shadowRoot.querySelector('.popup-button').style.width =
+            this.getAttribute('buttonWidth')
+        console.log(this.getAttribute('modalWidth'))
+        this.shadowRoot.querySelector('.popup-content').style.width =
+            this.getAttribute('modalWidth')
     }
 
     toggleModalVisible() {

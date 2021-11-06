@@ -64,7 +64,6 @@
     align-items: center;
     height: 70px;
     border-radius: 8px 8px 0 0;
-    width: 300px;
 }
 .header-img {
     border-radius: 50%;
@@ -109,7 +108,7 @@
     border-radius: 0 0 8px 8px;
 }
 .row:hover {
-    transition: 500ms ease-in;
+    transition: 200ms ease-in;
     background-color: #f7f7f7;
 }
 
