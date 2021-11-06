@@ -1,0 +1,28 @@
+.popup-container {
+    width: auto;
+    height: auto;
+    padding: 6px;
+    border-radius: 50px;
+    background-color: rgb(221, 219, 223);
+    cursor: pointer;
+}
+.popup-container:hover {
+    background-color: #c2c0c2;
+}
+
+.avatar-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.name {
+    margin: 6px;
+    font-size: 14px;
+}
+
+.avatar {
+    background-color: red;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 50%;
+}

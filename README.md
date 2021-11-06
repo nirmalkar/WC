@@ -1,4 +1,5 @@
-# WC 
+# WC
+
 [source](https://developer.mozilla.org/en-US/docs/Web/Web_Components)
 
 **Web Components** allows you to create reusable custom elements with their functionality encapsulated away from the rest of your code and further you can use those elements in your web application.
