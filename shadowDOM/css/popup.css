@@ -1,5 +1,4 @@
-.popup-container {
-    position: relative;
+.popup-button {
     width: auto;
     height: auto;
     padding: 6px;
@@ -7,7 +6,12 @@
     background-color: rgb(221, 219, 223);
     cursor: pointer;
 }
-.popup-container:hover {
+.popup-container {
+    position: relative;
+    margin: 0.2rem;
+}
+.popup-button:hover {
+    transition: 300ms ease-in;
     background-color: #c2c0c2;
 }
 
@@ -27,17 +31,30 @@
     width: 1.5rem;
     border-radius: 50%;
 }
+
+@keyframes fade {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
 .popup-content {
     position: absolute;
     cursor: default;
     height: auto;
     width: auto;
-    z-index: 2;
+    z-index: 4;
     background-color: #fff;
     border-radius: 8px;
-    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.5);
-    left: 0;
-    top: 0;
+    box-shadow: 3px 3px 6px rgba(0, 0, 0, 0.2);
+    left: -5rem;
+    top: -2rem;
+    display: none;
+    opacity: 1;
+    animation: fade 0.5s;
 }
 
 .popup-header {
@@ -46,7 +63,6 @@
     flex-direction: row;
     align-items: center;
     height: 70px;
-    transition: height 300ms cubic-bezier(0.4, 0, 0.2, 1);
     border-radius: 8px 8px 0 0;
     width: 300px;
 }
@@ -58,6 +74,7 @@
 
 .close {
     background: #585858;
+    z-index: 3;
     border-radius: 10px;
     height: 20px;
     position: absolute;
@@ -82,8 +99,34 @@
     width: 2px;
 }
 .row {
-    align-items: center;
-    display: flex;
-    flex-direction: row;
+    padding: 0.5rem 0.8rem;
     height: 60px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+}
+.twitter .row {
+    border-radius: 0 0 8px 8px;
+}
+.row:hover {
+    transition: 500ms ease-in;
+    background-color: #f7f7f7;
+}
+
+.instagram-img {
+    width: 2rem;
+}
+.twitter-img {
+    width: 2rem;
+}
+.social-link {
+    text-decoration: none;
+    font-size: 18px;
+    color: #555;
+}
+.social-id {
+    margin-left: 10px;
+}
+.social-id:hover {
+    color: #333;
 }
